@@ -4,7 +4,7 @@ import { background, Card, ChakraProvider, extendTheme } from "@chakra-ui/react"
 import dynamic from "next/dynamic";
 import { ApolloProvider } from "@apollo/client";
 import { apolloClient } from "@/utils/apollo/client";
-import BgImage from "../../public/assets/landing4.png"
+import BgImage from "../../public/assets/landing7.png"
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 
 import WagmiProvider from "../utils/wagmiprovider";
