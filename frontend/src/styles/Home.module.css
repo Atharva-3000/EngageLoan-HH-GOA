@@ -5,7 +5,13 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  /* background-image: url('/public/landing.jpg'); Remove this if the global background is sufficient */
+  background-size: cover; /* Adjusts the image to cover the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+
+
 
 .description {
   display: inherit;

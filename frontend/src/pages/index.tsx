@@ -48,7 +48,7 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
 
   return (
     <>
-      <Container maxW={"3xl"}>
+      <Container maxW={"3xl"} color={'#ffffff'}>
         <Stack
           as={Box}
           textAlign={"center"}
@@ -59,18 +59,15 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
             fontWeight={600}
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
             lineHeight={"100%"}
+            className="gap-10"
           >
             Inspiration to Investment: <br />
-            <Text as={"span"} color={"#1E88E5"}>
+            <Text as={"span"} color={"#ffffff"} className="font-extrabold">
               Embrace the Journey!
             </Text>
           </Heading>
-          <Text color={"gray.500"}>
-            Empowering artists and creators through innovative financial
-            solutions, our project leverages NFT collateralization, Aave v3
-            integration, and zk-based Anon Aadhaar identity proofs to provide a
-            decentralized lending platform, fostering creativity and financial
-            inclusion in the digital economy.
+          <Text color={"gray.400"}>
+          Inspiration to Investment: Embrace the Journey and Unlock Your NFT Potential! Our platform empowers artists and creators with innovative financial solutions, leveraging NFT collateralization and Aave v3 integration. With zk-based Anon Aadhaar identity proofs, we provide a decentralized lending ecosystem, fostering creativity and financial inclusion in the digital economy.
           </Text>
           <Stack
             direction={"column"}
@@ -81,7 +78,7 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
           >
             <Button
               colorScheme={"teal"}
-              bg={"#1E88E5"}
+              bg={"#ffffff"}
               rounded={"full"}
               px={6}
               _hover={{
