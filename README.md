@@ -1,11 +1,3 @@
-### Deployed Contract Addresses 📜
-
-LoanManager.sol :-0xBBeD959419253B1f1967141Ab6483b1472703476
-
-NFT.sol :- 0xa672510ccDdBa29202559b88840Bc04629B79c95
-
-OnChainVerifier.sol :- 0x278BD277EFBFD4647AaaCDa36A330759C1D7640f
-
 ### Subgraph studio links : -
 
 LoanManager Contract -
