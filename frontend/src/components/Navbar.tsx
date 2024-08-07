@@ -34,6 +34,7 @@ import {
   useAnonAadhaar,
   useProver,
 } from "@anon-aadhaar/react";
+import Logo from '../../public/assets/Logo4.png'
 
 export default function Navbar() {
   const [anonAadhaar] = useAnonAadhaar();
@@ -42,7 +43,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue("white", "")} px={10}>
+      <Box bg={useColorModeValue("white", "")} px={10} className="relative bg-white bg-opacity-5 backdrop-blur-md shadow-lg">
         <Flex
           h={16}
           alignItems="center"
@@ -65,13 +66,12 @@ export default function Navbar() {
             color="brand.004"
           >
             <Link href="/" mt={1}>
-              {/* <Image
-                  src="/assets/logo.png"
+              <Image
+                  src={Logo}
                   alt="Logo"
-                  width={94}
+                  width={150}
                   height={150}
-                /> */}
-              Engage Mint
+                />
             </Link>
           </HStack>
           <Flex alignItems={"center"}>
