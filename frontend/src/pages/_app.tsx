@@ -1,9 +1,10 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { background, Card, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import { ApolloProvider } from "@apollo/client";
 import { apolloClient } from "@/utils/apollo/client";
+import BgImage from "../../public/assets/landing4.png"
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 
 import WagmiProvider from "../utils/wagmiprovider";
@@ -14,20 +15,20 @@ import { AnonAadhaarProvider } from "@anon-aadhaar/react";
 
 const colors = {
   brand: {
-    50: "#ecefff",
-    100: "#cbceeb",
-    200: "#a9aed6",
-    300: "#888ec5",
-    400: "#666db3",
-    500: "#4d5499",
-    600: "#3c4178",
-    700: "#2a2f57",
-    800: "#181c37",
-    900: "#080819",
+    50: "#ff6442",
+    100: "#ff6442",
+    200: "#ff6442",
+    300: "#ff6442",
+    400: "#ff6442",
+    500: "#ff6442",
+    600: "#ff6442",
+    700: "#ff6442",
+    800: "#ff6442",
+    900: '#ff6442',
   },
 };
 const config = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
 };
 
@@ -40,24 +41,27 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     setReady(true);
   }, []);
+
   return (
     <>
       <Head>
-        <title>AaveAnonify</title>
+        <title>Engage Mint</title>
         <meta
           name="description"
-          content="Inspiration to Investment:
-Embrace the Journey!"
+          content="Embrace the Journey and Unlock Your NFT Potential!"
         />
       </Head>
       <WagmiProvider>
         <ChakraProvider theme={theme}>
-          <div
+          <Card
             style={{
               display: "flex",
               flexDirection: "column",
               minHeight: "100vh",
             }}
+            
+            backgroundImage={BgImage.src}
+            // image ya add ki ha 
           >
             <Navbar />
             <ApolloProvider client={apolloClient}>
@@ -74,8 +78,8 @@ Embrace the Journey!"
                 </AnonAadhaarProvider>
               ) : null}
             </ApolloProvider>
-            <Footer />
-          </div>
+            {/* <Footer /> */}
+          </Card>
         </ChakraProvider>
       </WagmiProvider>
     </>

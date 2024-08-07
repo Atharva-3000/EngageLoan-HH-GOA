@@ -42,7 +42,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue("white", "gray.800")} px={10}>
+      <Box bg={useColorModeValue("white", "")} px={10}>
         <Flex
           h={16}
           alignItems="center"
@@ -62,7 +62,7 @@ export default function Navbar() {
             fontSize="26px"
             fontWeight="0"
             ml="2"
-            color="brand.00"
+            color="brand.004"
           >
             <Link href="/" mt={1}>
               {/* <Image
@@ -71,7 +71,7 @@ export default function Navbar() {
                   width={94}
                   height={150}
                 /> */}
-              AaveAnonify
+              Engage Mint
             </Link>
           </HStack>
           <Flex alignItems={"center"}>
@@ -143,8 +143,11 @@ export default function Navbar() {
                 </>
               )}
 
-              <HStack>
+              <HStack className="text-black">
                 <ConnectButton
+                    w='100%'
+                    h='200px'
+                    bgGradient='linear(red.100 0%, orange.100 25%, yellow.100 50%)'
                   accountStatus={{
                     smallScreen: "avatar",
                     largeScreen: "full",
