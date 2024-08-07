@@ -47,7 +47,7 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
   };
 
   return (
-    <div className="mx-14">
+    <div className="mx-14 my-14">
         <Box margin="" textAlign="left">
           <Stack
             as={Box}
