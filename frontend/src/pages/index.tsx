@@ -47,74 +47,68 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
   };
 
   return (
-    <>
-      <Container maxW={"3xl"} color={'#ffffff'}>
-        <Stack
-          as={Box}
-          textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 15, md: 24 }}
-        >
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-            lineHeight={"100%"}
-            className="gap-10"
-          >
-            Inspiration to Investment: <br />
-            <Text as={"span"} color={"#ffffff"} className="font-extrabold">
-              Embrace the Journey!
-            </Text>
-          </Heading>
-          <Text color={"gray.400"}>
-          Inspiration to Investment: Embrace the Journey and Unlock Your NFT Potential! Our platform empowers artists and creators with innovative financial solutions, leveraging NFT collateralization and Aave v3 integration. With zk-based Anon Aadhaar identity proofs, we provide a decentralized lending ecosystem, fostering creativity and financial inclusion in the digital economy.
-          </Text>
+    <div className="mx-14 my-14">
+        <Box margin="" textAlign="left">
           <Stack
-            direction={"column"}
-            spacing={3}
-            align={"center"}
-            alignSelf={"center"}
-            position={"relative"}
+            as={Box}
+            spacing={{ base: 8, md: 14 }}
+            py={{ base: 15, md: 24 }}
+            align="flex-start"
           >
-            <Button
-              colorScheme={"teal"}
-              bg={"#ffffff"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "teal",
-              }}
-              onClick={() => router.push("/aadhaar-login")}
+            <Heading
+              fontWeight={600}
+              fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+              lineHeight={"100%"}
+              className="gap-10"
             >
-              Get Started
-            </Button>
-            <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              Learn more
-            </Button>
-            <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue("gray.800", "gray.300")}
-                w={71}
-                position={"absolute"}
-                right={-110}
-                top={"10px"}
-              />
-              <Text
-                fontSize={"lg"}
-                fontFamily={"Caveat"}
-                position={"absolute"}
-                right={"-125px"}
-                top={"-15px"}
-                transform={"rotate(10deg)"}
-              >
-                Free
+              Inspiration to Investment : <br />
+              <Text as={"span"} color={"#ffffff"} className="font-semibold">
+                Embrace the Journey !
               </Text>
-            </Box>
+            </Heading>
+            <Text color={"gray.400"} className="w-[850px] font-thin">
+              Inspiration to Investment: Embrace the Journey and Unlock Your NFT Potential! Our platform empowers artists and creators with innovative financial solutions, leveraging NFT collateralization and Aave v3 integration. With zk-based Anon Aadhaar identity proofs, we provide a decentralized lending ecosystem, fostering creativity and financial inclusion in the digital economy.
+            </Text>
+            <Stack
+              direction={"column"}
+              spacing={3}
+              align={"flex-start"} // Align items to the left
+              position={"relative"}
+            >
+              <Button className="hover:bg-slate-400 bg-white border border-white"
+                px={10}
+                
+                onClick={() => router.push("/aadhaar-login")}
+              >
+                Get Started
+              </Button>
+              <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
+                Learn more
+              </Button>
+              <Box>
+                {/* <Icon
+                  as={Arrow}
+                  color={useColorModeValue("gray.800", "gray.300")}
+                  w={71}
+                  position={"absolute"}
+                  right={-110}
+                  top={"10px"}
+                /> */}
+                {/* <Text
+                  fontSize={"lg"}
+                  fontFamily={"Caveat"}
+                  position={"absolute"}
+                  right={"-125px"}
+                  top={"-15px"}
+                  transform={"rotate(10deg)"}
+                >
+                  Free
+                </Text> */}
+              </Box>
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
-    </>
+    </Box>
+    </div>
   );
 }
 

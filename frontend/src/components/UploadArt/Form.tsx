@@ -105,7 +105,7 @@ const UploadArt = () => {
   };
   return (
     <>
-      <Box
+      <Box className="relative bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 shadow-lg max-w-md mx-auto"
         borderWidth="1px"
         rounded="lg"
         shadow="1px 1px 3px rgba(0,0,0,0.3)"
