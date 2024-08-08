@@ -67,7 +67,7 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
               </Text>
             </Heading>
             <Text color={"gray.400"} className="lg:w-[700px] font-thin -mt-7 sm:w-[300px] md:w-[300px]">
-              Inspiration to Investment: Embrace the Journey and Unlock Your NFT Potential! Our platform empowers artists and creators with innovative financial solutions, leveraging NFT collateralization and Aave v3 integration. With zk-based Anon Aadhaar identity proofs, we provide a decentralized lending ecosystem, fostering creativity and financial inclusion in the digital economy.
+            Our platform empowers artists and creators with innovative financial solutions, leveraging NFT collateralization and Aave v3 integration. With zk-based Anon Aadhaar identity proofs, we provide a decentralized lending ecosystem .
             </Text>
             <Stack
               direction={"column"}

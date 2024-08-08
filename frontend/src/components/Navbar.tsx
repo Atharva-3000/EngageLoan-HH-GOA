@@ -34,7 +34,7 @@ import {
   useAnonAadhaar,
   useProver,
 } from "@anon-aadhaar/react";
-import Logo from '../../public/assets/Logo4.png'
+import Logo from '../../public/assets/Logo5.png'
 
 export default function Navbar() {
   const [anonAadhaar] = useAnonAadhaar();

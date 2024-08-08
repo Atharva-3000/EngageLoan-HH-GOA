@@ -183,7 +183,7 @@ const CardComponent = ({ address }) => {
 
   const renderStepContent = () => {
     return (
-      <VStack spacing={4} align="stretch">
+      <VStack spacing={4} align="stretch" className="bg-blue-300  ">
         <HStack mb={4}>{[1, 2, 3, 4].map((step) => renderDot(step))}</HStack>
         {currentStep === 1 && (
           <>
@@ -343,25 +343,26 @@ const CardComponent = ({ address }) => {
   console.log(borrower.length);
 
   return (
-    <div>
+    <div className="">
       <Center py={6} margin={5}>
         <Box
           h={"full"}
           w={"full"}
-          bg={useColorModeValue("white", "gray.800")}
+          bg={useColorModeValue("", "")}
           boxShadow={"2xl"}
           rounded={"lg"}
           overflow={"hidden"}
+          className="border border-transparent hover:border-white rounded-lg"
         >
-          <Image
-            h={"120px"}
-            w={"full"}
-            src={imageURI}
-            objectFit={"cover"}
-            fallbackSrc={"https://placehold.jp/500x150.png?text=Fetching..."}
-          />
+            <Image
+              h={"120px"}
+              w={"full"}
+              src={imageURI}
+              objectFit={"cover"}
+              fallbackSrc={"https://placehold.jp/500x150.png?text=Fetching..."}
+            />
 
-          <Box p={6}>
+          <Box p={6} className="relative bg-gray-800 bg-opacity-5 backdrop-blur-md rounded-lg shadow-lg max-w-md mx-auto hover:shadow-white ">
             <Stack spacing={0} align={"center"} mb={5}>
               <Text fontWeight={500} fontFamily={"body"}>
                 Loan Amount $ {amount / 1e18}
@@ -391,10 +392,10 @@ const CardComponent = ({ address }) => {
               <Button
                 w={"full"}
                 mt={4}
-                bg={useColorModeValue("#151f21", "gray.900")}
-                color={"white"}
+                bg={useColorModeValue("#ffffff", "#ffffff")}
+                color={"black"}
                 rounded={"md"}
-                _hover={{
+                _hover={{ 
                   transform: "translateY(-2px)",
                   boxShadow: "lg",
                 }}
@@ -405,16 +406,16 @@ const CardComponent = ({ address }) => {
               </Button>
               {lenderFlag && (
                 <Button
-                  w={"full"}
-                  mt={8}
-                  bg={useColorModeValue("#151f21", "gray.900")}
-                  color={"white"}
-                  rounded={"md"}
-                  _hover={{
-                    transform: "translateY(-2px)",
-                    boxShadow: "lg",
-                  }}
-                  ml={2}
+                w={"full"}
+                mt={4}
+                bg={useColorModeValue("#ffffff", "#ffffff")}
+                color={"black"}
+                rounded={"md"}
+                _hover={{
+                  transform: "translateY(-2px)",
+                  boxShadow: "lg",
+                }}
+                mr={2}
                   onClick={claimNFT}
                 >
                   Claim NFT
@@ -426,8 +427,8 @@ const CardComponent = ({ address }) => {
                 w={"full"}
                 mt={4}
                 mr={2}
-                bg={useColorModeValue("#151f21", "gray.900")}
-                color={"white"}
+                bg={useColorModeValue("#ffffff", "gray.100")}
+                color={"black"}
                 rounded={"md"}
                 _hover={{
                   transform: "translateY(-2px)",
@@ -445,7 +446,7 @@ const CardComponent = ({ address }) => {
                 w={"full"}
                 mt={4}
                 ml={2}
-                bg={useColorModeValue("#151f21", "gray.900")}
+                bg={useColorModeValue("#000000", "#000000")}
                 color={"white"}
                 rounded={"md"}
                 _hover={{
