@@ -1,5 +1,7 @@
 // @ts-nocheck comment\
 import { useAccount } from "wagmi";
+// import Image from 'next/image';
+import Nft from '../../../public/assets/NotFound.png'
 import {
   Heading,
   HStack,
@@ -43,6 +45,8 @@ import DAIAbi from "../../utils/DAI.json";
 import DebtTokenAbi from "../../utils/DebtToken.json";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
+import CardImages from "./CardImages";
+// import CardImages from '../../../public/assets/NotFound.png'
 
 const CardComponent = ({ address }) => {
   const [imageURI, setImageURI] = useState("");
@@ -66,6 +70,7 @@ const CardComponent = ({ address }) => {
   const nftContractAddress = "0xa672510ccDdBa29202559b88840Bc04629B79c95";
 
   const { address: userAddress } = useAccount();
+
 
   const handleNextStep = () => {
     setCurrentStep((prevStep) => prevStep + 1);
@@ -183,7 +188,7 @@ const CardComponent = ({ address }) => {
 
   const renderStepContent = () => {
     return (
-      <VStack spacing={4} align="stretch" className="bg-blue-300  ">
+      <VStack spacing={4} align="stretch" className="relative bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 shadow-lg">
         <HStack mb={4}>{[1, 2, 3, 4].map((step) => renderDot(step))}</HStack>
         {currentStep === 1 && (
           <>
@@ -354,13 +359,17 @@ const CardComponent = ({ address }) => {
           overflow={"hidden"}
           className="border border-transparent hover:border-white rounded-lg"
         >
-            <Image
+            {/* <Image src={Nft} alt="Card Image" h={"120px"}
+              w={"full"} /> */}
+            {/* <Image
               h={"120px"}
               w={"full"}
               src={imageURI}
+              // src={CardImages}
               objectFit={"cover"}
               fallbackSrc={"https://placehold.jp/500x150.png?text=Fetching..."}
-            />
+            /> */}
+            <CardImages/>
 
           <Box p={6} className="relative bg-gray-800 bg-opacity-5 backdrop-blur-md rounded-lg shadow-lg max-w-md mx-auto hover:shadow-white ">
             <Stack spacing={0} align={"center"} mb={5}>

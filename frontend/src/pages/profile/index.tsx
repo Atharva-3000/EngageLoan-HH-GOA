@@ -24,6 +24,7 @@ import {
 } from "@chakra-ui/react";
 import { useAccount } from "wagmi";
 import NoData from "./NoData";
+import PCard from "./PCard";
 
 interface IBlogTags {
   tags: Array<string>;
@@ -168,6 +169,7 @@ const Profile = () => {
       // </Center>
       }
       {loans && loans.map((loan) => <ProfileCard loan={loan} />)}
+      <PCard/>
     </Container>
   );
 };
