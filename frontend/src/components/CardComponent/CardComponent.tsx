@@ -76,6 +76,12 @@ const CardComponent = ({ address }) => {
     setCurrentStep((prevStep) => prevStep + 1);
   };
 
+  const generateRandomAmount = () => {
+    const min = 100;  // Minimum 3-digit number
+    const max = 9999; // Maximum 4-digit number
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
   const checkLender = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -374,13 +380,16 @@ const CardComponent = ({ address }) => {
           <Box p={6} className="relative bg-gray-800 bg-opacity-5 backdrop-blur-md rounded-lg shadow-lg max-w-md mx-auto hover:shadow-white ">
             <Stack spacing={0} align={"center"} mb={5}>
               <Text fontWeight={500} fontFamily={"body"}>
-                Loan Amount $ {amount / 1e18}
+                Loan Amount : $ {generateRandomAmount()}
+                {/* $ {amount / 1e18} */}
               </Text>
             </Stack>
 
             <Stack spacing={0} align={"center"} mb={5}>
               <Text fontWeight={500} fontFamily={"body"}>
-                Interest Rate {interestRate} %
+                Interest Rate : 0.5 
+                {/* {interestRate} */}
+                 % *
               </Text>
             </Stack>
 
@@ -393,7 +402,8 @@ const CardComponent = ({ address }) => {
 
             <Stack spacing={0} align={"center"} mb={5}>
               <Text fontWeight={500} fontFamily={"body"}>
-                Expiration Date: {expirationDate.slice(4, 15)}
+                Expiration Date: XX-XX-XXXX
+                {/* {expirationDate.slice(4, 15)} */}
               </Text>
             </Stack>
 
