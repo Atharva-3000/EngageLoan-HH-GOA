@@ -1,5 +1,7 @@
 // @ts-nocheck comment\
 import { useAccount } from "wagmi";
+// import Image from 'next/image';
+import Nft from '../../../public/assets/NotFound.png'
 import {
   Heading,
   HStack,
@@ -43,6 +45,8 @@ import DAIAbi from "../../utils/DAI.json";
 import DebtTokenAbi from "../../utils/DebtToken.json";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
+import CardImages from "./CardImages";
+// import CardImages from '../../../public/assets/NotFound.png'
 
 const CardComponent = ({ address }) => {
   const [imageURI, setImageURI] = useState("");
@@ -67,8 +71,15 @@ const CardComponent = ({ address }) => {
 
   const { address: userAddress } = useAccount();
 
+
   const handleNextStep = () => {
     setCurrentStep((prevStep) => prevStep + 1);
+  };
+
+  const generateRandomAmount = () => {
+    const min = 100;  // Minimum 3-digit number
+    const max = 9999; // Maximum 4-digit number
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
   const checkLender = async () => {
@@ -183,7 +194,7 @@ const CardComponent = ({ address }) => {
 
   const renderStepContent = () => {
     return (
-      <VStack spacing={4} align="stretch">
+      <VStack spacing={4} align="stretch" className="relative bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 shadow-lg">
         <HStack mb={4}>{[1, 2, 3, 4].map((step) => renderDot(step))}</HStack>
         {currentStep === 1 && (
           <>
@@ -343,34 +354,42 @@ const CardComponent = ({ address }) => {
   console.log(borrower.length);
 
   return (
-    <div>
+    <div className="">
       <Center py={6} margin={5}>
         <Box
           h={"full"}
           w={"full"}
-          bg={useColorModeValue("white", "gray.800")}
+          bg={useColorModeValue("", "")}
           boxShadow={"2xl"}
           rounded={"lg"}
           overflow={"hidden"}
+          className="border border-transparent hover:border-white rounded-lg"
         >
-          <Image
-            h={"120px"}
-            w={"full"}
-            src={imageURI}
-            objectFit={"cover"}
-            fallbackSrc={"https://placehold.jp/500x150.png?text=Fetching..."}
-          />
+            {/* <Image src={Nft} alt="Card Image" h={"120px"}
+              w={"full"} /> */}
+            {/* <Image
+              h={"120px"}
+              w={"full"}
+              src={imageURI}
+              // src={CardImages}
+              objectFit={"cover"}
+              fallbackSrc={"https://placehold.jp/500x150.png?text=Fetching..."}
+            /> */}
+            <CardImages/>
 
-          <Box p={6}>
+          <Box p={6} className="relative bg-gray-800 bg-opacity-5 backdrop-blur-md rounded-lg shadow-lg max-w-md mx-auto hover:shadow-white ">
             <Stack spacing={0} align={"center"} mb={5}>
               <Text fontWeight={500} fontFamily={"body"}>
-                Loan Amount $ {amount / 1e18}
+                Loan Amount : $ {generateRandomAmount()}
+                {/* $ {amount / 1e18} */}
               </Text>
             </Stack>
 
             <Stack spacing={0} align={"center"} mb={5}>
               <Text fontWeight={500} fontFamily={"body"}>
-                Interest Rate {interestRate} %
+                Interest Rate : 0.5 
+                {/* {interestRate} */}
+                 % *
               </Text>
             </Stack>
 
@@ -383,7 +402,8 @@ const CardComponent = ({ address }) => {
 
             <Stack spacing={0} align={"center"} mb={5}>
               <Text fontWeight={500} fontFamily={"body"}>
-                Expiration Date: {expirationDate.slice(4, 15)}
+                Expiration Date: XX-XX-XXXX
+                {/* {expirationDate.slice(4, 15)} */}
               </Text>
             </Stack>
 
@@ -391,10 +411,10 @@ const CardComponent = ({ address }) => {
               <Button
                 w={"full"}
                 mt={4}
-                bg={useColorModeValue("#151f21", "gray.900")}
-                color={"white"}
+                bg={useColorModeValue("#ffffff", "#ffffff")}
+                color={"black"}
                 rounded={"md"}
-                _hover={{
+                _hover={{ 
                   transform: "translateY(-2px)",
                   boxShadow: "lg",
                 }}
@@ -405,16 +425,16 @@ const CardComponent = ({ address }) => {
               </Button>
               {lenderFlag && (
                 <Button
-                  w={"full"}
-                  mt={8}
-                  bg={useColorModeValue("#151f21", "gray.900")}
-                  color={"white"}
-                  rounded={"md"}
-                  _hover={{
-                    transform: "translateY(-2px)",
-                    boxShadow: "lg",
-                  }}
-                  ml={2}
+                w={"full"}
+                mt={4}
+                bg={useColorModeValue("#ffffff", "#ffffff")}
+                color={"black"}
+                rounded={"md"}
+                _hover={{
+                  transform: "translateY(-2px)",
+                  boxShadow: "lg",
+                }}
+                mr={2}
                   onClick={claimNFT}
                 >
                   Claim NFT
@@ -426,8 +446,8 @@ const CardComponent = ({ address }) => {
                 w={"full"}
                 mt={4}
                 mr={2}
-                bg={useColorModeValue("#151f21", "gray.900")}
-                color={"white"}
+                bg={useColorModeValue("#ffffff", "gray.100")}
+                color={"black"}
                 rounded={"md"}
                 _hover={{
                   transform: "translateY(-2px)",
@@ -445,7 +465,7 @@ const CardComponent = ({ address }) => {
                 w={"full"}
                 mt={4}
                 ml={2}
-                bg={useColorModeValue("#151f21", "gray.900")}
+                bg={useColorModeValue("#000000", "#000000")}
                 color={"white"}
                 rounded={"md"}
                 _hover={{

@@ -23,6 +23,8 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { useAccount } from "wagmi";
+import NoData from "./NoData";
+import PCard from "./PCard";
 
 interface IBlogTags {
   tags: Array<string>;
@@ -159,8 +161,15 @@ const Profile = () => {
   return (
     <Container maxW={"7xl"} p="12">
       <Heading as="h1">Created Loans: </Heading>
-      {loans.length == 0 && <Center mt={8}>No Loans Found</Center>}
+      {
+      loans.length == 0 && 
+      <></>
+      // <Center mt={8}>
+      // <NoData />
+      // </Center>
+      }
       {loans && loans.map((loan) => <ProfileCard loan={loan} />)}
+      <PCard/>
     </Container>
   );
 };

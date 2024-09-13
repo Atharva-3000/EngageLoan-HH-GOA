@@ -114,6 +114,7 @@ const CreateLoanForm = () => {
         p={6}
         m="10px auto"
         as="form"
+        className="relative bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 shadow-lg max-w-md mx-auto"
       >
         <SimpleGrid columns={1} spacing={6}>
           <Heading w="100%" textAlign={"center"} fontWeight="normal" mb="2%">
@@ -175,13 +176,14 @@ const CreateLoanForm = () => {
               }}
             />
           </FormControl>
-          <Button colorScheme="teal" variant="solid" onClick={transferNFT}>
+          <Button colorScheme="teal" variant="solid" onClick={transferNFT} className="bg-white text-black">
             {nftTransfered
               ? "Collateral Transferred Successfully!"
               : "Transfer Collateral"}
           </Button>
           {nftTransfered && (
-            <Button colorScheme="teal" variant="solid" onClick={handleSubmit}>
+            <Button colorScheme="" variant="" onClick={handleSubmit} 
+            color="gray.500" className="bg-white text-black border border-white">
               Create Loan
             </Button>
           )}
