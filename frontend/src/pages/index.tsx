@@ -47,7 +47,7 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
   };
 
   return (
-    <div className="mx-14 my-14">
+    <div className="mx-14 sm:gap-10">
         <Box margin="" textAlign="left">
           <Stack
             as={Box}
@@ -59,15 +59,15 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
               fontWeight={600}
               fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
               lineHeight={"100%"}
-              className="gap-10"
+              
             >
               Inspiration to Investment : <br />
               <Text as={"span"} color={"#ffffff"} className="font-semibold">
                 Embrace the Journey !
               </Text>
             </Heading>
-            <Text color={"gray.400"} className="w-[850px] font-thin">
-              Inspiration to Investment: Embrace the Journey and Unlock Your NFT Potential! Our platform empowers artists and creators with innovative financial solutions, leveraging NFT collateralization and Aave v3 integration. With zk-based Anon Aadhaar identity proofs, we provide a decentralized lending ecosystem, fostering creativity and financial inclusion in the digital economy.
+            <Text color={"gray.400"} className="lg:w-[700px] font-thin -mt-7 sm:w-[300px] md:w-[300px]">
+            Our platform empowers artists and creators with innovative financial solutions, leveraging NFT collateralization and Aave v3 integration. With zk-based Anon Aadhaar identity proofs, we provide a decentralized lending ecosystem .
             </Text>
             <Stack
               direction={"column"}
@@ -75,8 +75,8 @@ export default function Home({ setUseTestAadhaar, useTestAadhaar }: HomeProps) {
               align={"flex-start"} // Align items to the left
               position={"relative"}
             >
-              <Button className="hover:bg-slate-400 bg-white border border-white"
-                px={10}
+              <Button className="bg-white text-black font-semibold py-2 px-4 border border-gray-300 rounded-md transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-white hover:to-silver   -mt-7"
+                px={10} 
                 
                 onClick={() => router.push("/aadhaar-login")}
               >
