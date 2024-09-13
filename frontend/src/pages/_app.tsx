@@ -12,6 +12,7 @@ import Head from "next/head";
 import Footer from "@/components/Footer";
 import React, { useEffect, useState } from "react";
 import { AnonAadhaarProvider } from "@anon-aadhaar/react";
+import Icon from "../../public/next.svg"
 
 const colors = {
   brand: {
@@ -45,11 +46,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Engage Mint</title>
+        <title>Engage Loan</title>
         <meta
           name="description"
           content="Embrace the Journey and Unlock Your NFT Potential!"
         />
+        <link rel={Icon} href="/next.svg" />
       </Head>
       <WagmiProvider>
         <ChakraProvider theme={theme}>
@@ -58,9 +60,14 @@ export default function App({ Component, pageProps }: AppProps) {
               display: "flex",
               flexDirection: "column",
               minHeight: "100vh",
+              backgroundImage: `url(${BgImage.src})`,
+              backgroundAttachment: "fixed",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
             }}
             
-            backgroundImage={BgImage.src}
+            backgroundImage={BgImage.src} className=""
             // image ya add ki ha 
           >
             <Navbar />
