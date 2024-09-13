@@ -10,7 +10,7 @@ paths: {
 networks: {
     polygonAmoy: {
     url: "https://polygon-amoy.g.alchemy.com/v2/GDPZGLVRyXfR8mvXf5xi80OiOJx8oqX8",
-    accounts: ,
+    accounts: process.env.ACCOUNT_KEY,
     chainId:80002,
     },
 },
